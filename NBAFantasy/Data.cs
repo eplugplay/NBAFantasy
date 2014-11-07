@@ -19,15 +19,14 @@ namespace NBAFantasy
     public static class Data
     {
         public static int currentPlayerIndex { get; set; }
-        public static void AddPlayer(int id)
+        public static void AddNewPlayer()
         {
             using (MySqlConnection cnn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ToString()))
             {
                 cnn.Open();
                 using (var cmd = cnn.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO fantasystats (playername, fantasyteamid) VALUES ('New Player', @fantasyteamid)";
-                    cmd.Parameters.AddWithValue("fantasyteamid", id);
+                    cmd.CommandText = "INSERT INTO fantasystats (playername, fantasyteamid) VALUES ('New Player', 0)";
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -67,6 +66,35 @@ namespace NBAFantasy
                 {
                     cmd.CommandText = "DELETE FROM fantasystats WHERE id=@id";
                     cmd.Parameters.AddWithValue("id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void RemovePlayer(int id)
+        {
+            using (MySqlConnection cnn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ToString()))
+            {
+                cnn.Open();
+                using (var cmd = cnn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE fantasystats SET fantasyteamid=0 WHERE id=@id";
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void AddPlayer(int teamid, int playerid)
+        {
+            using (MySqlConnection cnn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ToString()))
+            {
+                cnn.Open();
+                using (var cmd = cnn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE fantasystats SET fantasyteamid=@fantasyteamid WHERE id=@id";
+                    cmd.Parameters.AddWithValue("fantasyteamid", teamid);
+                    cmd.Parameters.AddWithValue("id", playerid);
                     cmd.ExecuteNonQuery();
                 }
             }

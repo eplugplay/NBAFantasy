@@ -34,6 +34,22 @@ namespace NBAFantasy
             }
         }
 
+        public static DataTable GetAllAvailablePlayers()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection cnn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ToString()))
+            {
+                cnn.Open();
+                using (var cmd = cnn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM fantasystats WHERE fantasyteamid = 0";
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
         public static DataTable GetTeams()
         {
             DataTable dt = new DataTable();
@@ -58,8 +74,25 @@ namespace NBAFantasy
                 cnn.Open();
                 using (var cmd = cnn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM fantasystats WHERE fantasyteamid = @fantasyteamid";
+                    cmd.CommandText = "SELECT * FROM fantasystats WHERE fantasyteamid = @fantasyteamid order by id";
                     cmd.Parameters.AddWithValue("Fantasyteamid", id);
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public static DataTable GetIndividualStats(int id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection cnn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ToString()))
+            {
+                cnn.Open();
+                using (var cmd = cnn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM fantasystats WHERE id=@id";
+                    cmd.Parameters.AddWithValue("id", id);
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                     da.Fill(dt);
                     return dt;

@@ -29,9 +29,19 @@
         private void InitializeComponent()
         {
             this.gpbxMain = new System.Windows.Forms.GroupBox();
+            this.btnAddPlayer = new System.Windows.Forms.Button();
+            this.lblAllPlayers = new System.Windows.Forms.Label();
+            this.lstAllPlayers = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAddNewPlayer = new System.Windows.Forms.Button();
             this.gpbxStats = new System.Windows.Forms.GroupBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtPlayerName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtTo = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtBlk = new System.Windows.Forms.TextBox();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.txtSt = new System.Windows.Forms.TextBox();
             this.txtAst = new System.Windows.Forms.TextBox();
             this.txtReb = new System.Windows.Forms.TextBox();
@@ -49,17 +59,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lstPlayers = new System.Windows.Forms.ListBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.ddlTeams = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.lblPlayerName = new System.Windows.Forms.Label();
-            this.txtPlayerName = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnDeletePlayer = new System.Windows.Forms.Button();
             this.gpbxMain.SuspendLayout();
             this.gpbxStats.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -67,19 +71,75 @@
             // 
             // gpbxMain
             // 
+            this.gpbxMain.Controls.Add(this.btnDeletePlayer);
+            this.gpbxMain.Controls.Add(this.btnAddPlayer);
+            this.gpbxMain.Controls.Add(this.lblAllPlayers);
+            this.gpbxMain.Controls.Add(this.lstAllPlayers);
             this.gpbxMain.Controls.Add(this.btnRemove);
-            this.gpbxMain.Controls.Add(this.btnAdd);
+            this.gpbxMain.Controls.Add(this.btnAddNewPlayer);
             this.gpbxMain.Controls.Add(this.gpbxStats);
             this.gpbxMain.Controls.Add(this.lstPlayers);
-            this.gpbxMain.Controls.Add(this.btnSave);
             this.gpbxMain.Controls.Add(this.ddlTeams);
             this.gpbxMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbxMain.Location = new System.Drawing.Point(10, 27);
             this.gpbxMain.Name = "gpbxMain";
-            this.gpbxMain.Size = new System.Drawing.Size(664, 271);
+            this.gpbxMain.Size = new System.Drawing.Size(876, 271);
             this.gpbxMain.TabIndex = 4;
             this.gpbxMain.TabStop = false;
             this.gpbxMain.Text = "Edit Teams";
+            // 
+            // btnAddPlayer
+            // 
+            this.btnAddPlayer.Location = new System.Drawing.Point(187, 172);
+            this.btnAddPlayer.Name = "btnAddPlayer";
+            this.btnAddPlayer.Size = new System.Drawing.Size(21, 23);
+            this.btnAddPlayer.TabIndex = 24;
+            this.btnAddPlayer.TabStop = false;
+            this.btnAddPlayer.Text = "<";
+            this.btnAddPlayer.UseVisualStyleBackColor = true;
+            this.btnAddPlayer.Click += new System.EventHandler(this.btnAddPlayer_Click);
+            // 
+            // lblAllPlayers
+            // 
+            this.lblAllPlayers.AutoSize = true;
+            this.lblAllPlayers.Location = new System.Drawing.Point(221, 30);
+            this.lblAllPlayers.Name = "lblAllPlayers";
+            this.lblAllPlayers.Size = new System.Drawing.Size(70, 13);
+            this.lblAllPlayers.TabIndex = 23;
+            this.lblAllPlayers.Text = "All Players:";
+            // 
+            // lstAllPlayers
+            // 
+            this.lstAllPlayers.FormattingEnabled = true;
+            this.lstAllPlayers.Location = new System.Drawing.Point(214, 46);
+            this.lstAllPlayers.Name = "lstAllPlayers";
+            this.lstAllPlayers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstAllPlayers.Size = new System.Drawing.Size(165, 186);
+            this.lstAllPlayers.TabIndex = 22;
+            this.lstAllPlayers.TabStop = false;
+            this.lstAllPlayers.SelectedIndexChanged += new System.EventHandler(this.lstAllPlayers_SelectedIndexChanged);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(187, 79);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(21, 23);
+            this.btnRemove.TabIndex = 21;
+            this.btnRemove.TabStop = false;
+            this.btnRemove.Text = ">";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAddNewPlayer
+            // 
+            this.btnAddNewPlayer.Location = new System.Drawing.Point(385, 46);
+            this.btnAddNewPlayer.Name = "btnAddNewPlayer";
+            this.btnAddNewPlayer.Size = new System.Drawing.Size(21, 20);
+            this.btnAddNewPlayer.TabIndex = 20;
+            this.btnAddNewPlayer.TabStop = false;
+            this.btnAddNewPlayer.Text = "+";
+            this.btnAddNewPlayer.UseVisualStyleBackColor = true;
+            this.btnAddNewPlayer.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gpbxStats
             // 
@@ -87,6 +147,7 @@
             this.gpbxStats.Controls.Add(this.txtPlayerName);
             this.gpbxStats.Controls.Add(this.label10);
             this.gpbxStats.Controls.Add(this.txtTo);
+            this.gpbxStats.Controls.Add(this.btnSave);
             this.gpbxStats.Controls.Add(this.txtBlk);
             this.gpbxStats.Controls.Add(this.lblPlayerName);
             this.gpbxStats.Controls.Add(this.txtSt);
@@ -105,12 +166,35 @@
             this.gpbxStats.Controls.Add(this.label7);
             this.gpbxStats.Controls.Add(this.label9);
             this.gpbxStats.Controls.Add(this.label8);
-            this.gpbxStats.Location = new System.Drawing.Point(200, 46);
+            this.gpbxStats.Location = new System.Drawing.Point(416, 19);
             this.gpbxStats.Name = "gpbxStats";
-            this.gpbxStats.Size = new System.Drawing.Size(454, 102);
+            this.gpbxStats.Size = new System.Drawing.Size(454, 117);
             this.gpbxStats.TabIndex = 19;
             this.gpbxStats.TabStop = false;
             this.gpbxStats.Text = "Stats";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(360, 19);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(54, 20);
+            this.txtPosition.TabIndex = 2;
+            // 
+            // txtPlayerName
+            // 
+            this.txtPlayerName.Location = new System.Drawing.Point(155, 19);
+            this.txtPlayerName.Name = "txtPlayerName";
+            this.txtPlayerName.Size = new System.Drawing.Size(132, 20);
+            this.txtPlayerName.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(298, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Position:";
             // 
             // txtTo
             // 
@@ -119,12 +203,32 @@
             this.txtTo.Size = new System.Drawing.Size(40, 20);
             this.txtTo.TabIndex = 11;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(369, 86);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.TabStop = false;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // txtBlk
             // 
             this.txtBlk.Location = new System.Drawing.Point(362, 60);
             this.txtBlk.Name = "txtBlk";
             this.txtBlk.Size = new System.Drawing.Size(38, 20);
             this.txtBlk.TabIndex = 10;
+            // 
+            // lblPlayerName
+            // 
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Location = new System.Drawing.Point(67, 22);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(82, 13);
+            this.lblPlayerName.TabIndex = 28;
+            this.lblPlayerName.Text = "Player Name:";
             // 
             // txtSt
             // 
@@ -261,21 +365,11 @@
             this.lstPlayers.FormattingEnabled = true;
             this.lstPlayers.Location = new System.Drawing.Point(16, 46);
             this.lstPlayers.Name = "lstPlayers";
+            this.lstPlayers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstPlayers.Size = new System.Drawing.Size(165, 186);
             this.lstPlayers.TabIndex = 9;
             this.lstPlayers.TabStop = false;
             this.lstPlayers.SelectedIndexChanged += new System.EventHandler(this.lstPlayers_SelectedIndexChanged);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(579, 154);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.TabStop = false;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ddlTeams
             // 
@@ -294,7 +388,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(898, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -309,69 +403,26 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // btnAdd
+            // btnDeletePlayer
             // 
-            this.btnAdd.Location = new System.Drawing.Point(16, 238);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 20;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(106, 238);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 21;
-            this.btnRemove.TabStop = false;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // lblPlayerName
-            // 
-            this.lblPlayerName.AutoSize = true;
-            this.lblPlayerName.Location = new System.Drawing.Point(67, 22);
-            this.lblPlayerName.Name = "lblPlayerName";
-            this.lblPlayerName.Size = new System.Drawing.Size(82, 13);
-            this.lblPlayerName.TabIndex = 28;
-            this.lblPlayerName.Text = "Player Name:";
-            // 
-            // txtPlayerName
-            // 
-            this.txtPlayerName.Location = new System.Drawing.Point(155, 19);
-            this.txtPlayerName.Name = "txtPlayerName";
-            this.txtPlayerName.Size = new System.Drawing.Size(132, 20);
-            this.txtPlayerName.TabIndex = 0;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(360, 19);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(54, 20);
-            this.txtPosition.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(298, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Position:";
+            this.btnDeletePlayer.Location = new System.Drawing.Point(385, 72);
+            this.btnDeletePlayer.Name = "btnDeletePlayer";
+            this.btnDeletePlayer.Size = new System.Drawing.Size(21, 20);
+            this.btnDeletePlayer.TabIndex = 25;
+            this.btnDeletePlayer.TabStop = false;
+            this.btnDeletePlayer.Text = "-";
+            this.btnDeletePlayer.UseVisualStyleBackColor = true;
+            this.btnDeletePlayer.Click += new System.EventHandler(this.btnDeletePlayer_Click);
             // 
             // EditPlayers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 304);
+            this.ClientSize = new System.Drawing.Size(898, 330);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gpbxMain);
             this.Name = "EditPlayers";
@@ -379,6 +430,7 @@
             this.Text = "Edit Players";
             this.Load += new System.EventHandler(this.EditPlayers_Load);
             this.gpbxMain.ResumeLayout(false);
+            this.gpbxMain.PerformLayout();
             this.gpbxStats.ResumeLayout(false);
             this.gpbxStats.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -417,10 +469,14 @@
         private System.Windows.Forms.TextBox txt3Ptm;
         private System.Windows.Forms.TextBox txtFt;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddNewPlayer;
         private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.TextBox txtPlayerName;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox lstAllPlayers;
+        private System.Windows.Forms.Label lblAllPlayers;
+        private System.Windows.Forms.Button btnAddPlayer;
+        private System.Windows.Forms.Button btnDeletePlayer;
     }
 }
