@@ -65,14 +65,14 @@
             // editPlayersToolStripMenuItem
             // 
             this.editPlayersToolStripMenuItem.Name = "editPlayersToolStripMenuItem";
-            this.editPlayersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editPlayersToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.editPlayersToolStripMenuItem.Text = "Edit Players";
             this.editPlayersToolStripMenuItem.Click += new System.EventHandler(this.editPlayersToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -156,6 +156,7 @@
             this.ClientSize = new System.Drawing.Size(376, 176);
             this.Controls.Add(this.gpbxMain);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

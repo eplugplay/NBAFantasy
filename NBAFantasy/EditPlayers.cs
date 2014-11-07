@@ -114,6 +114,18 @@ namespace NBAFantasy
             txtPosition.Clear();
         }
 
+        public void CheckLstEmpty()
+        {
+            if (lstAllPlayers.SelectedItems.Count == 0 && lstPlayers.SelectedItems.Count == 0)
+            {
+                gpbxStats.Enabled = false;
+            }
+            else
+            {
+                gpbxStats.Enabled = true;
+            }
+        }
+
         private void lstPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstAllSelected == true)
@@ -154,6 +166,7 @@ namespace NBAFantasy
         {
             ClearAllFields();
             LoadPlayers();
+            CheckLstEmpty();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -162,6 +175,7 @@ namespace NBAFantasy
             LoadAllAvailablePlayers();
             lstAllPlayers.SelectedIndex = -1;
             lstAllPlayers.SelectedIndex = lstAllPlayers.Items.Count - 1;
+            txtPlayerName.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -174,6 +188,15 @@ namespace NBAFantasy
                     {
                         MessageBox.Show("Empty text boxes.");
                         return;
+                    }
+                    if (txt.Name != "txtPosition" && txt.Name != "txtPlayerName")
+                    {
+                        if (!Regex.IsMatch(txt.Text, @"^\-{0,1}\d*(.\d+){0,1}$"))
+                        {
+                            MessageBox.Show("Numbers only.");
+                            txt.Focus();
+                            return;
+                        }
                     }
                 }
             }
@@ -246,6 +269,7 @@ namespace NBAFantasy
             
             LoadPlayers();
             LoadAllAvailablePlayers();
+            CheckLstEmpty();
         }
     }
 }
