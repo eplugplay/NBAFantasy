@@ -524,6 +524,7 @@
             this.ClientSize = new System.Drawing.Size(583, 341);
             this.Controls.Add(this.gpbxResults);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Comparison";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comparison Results";

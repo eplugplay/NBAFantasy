@@ -426,6 +426,7 @@
             this.Controls.Add(this.gpbxMain);
             this.Controls.Add(this.gpbxStats);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "EditPlayers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Players";
