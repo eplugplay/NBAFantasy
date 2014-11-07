@@ -1,0 +1,10 @@
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\bin\Debug\NBAFantasy.exe.config
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\bin\Debug\NBAFantasy.exe
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\bin\Debug\NBAFantasy.pdb
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.Comparison.resources
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.EditPlayers.resources
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.MainMenu.resources
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.Properties.Resources.resources
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.csproj.GenerateResource.Cache
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.exe
+C:\Users\stevey\Documents\Visual Studio 2010\Projects\NBAFantasy\NBAFantasy\obj\x86\Debug\NBAFantasy.pdb
